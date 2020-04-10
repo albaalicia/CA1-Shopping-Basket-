@@ -17,7 +17,7 @@ class Cart(object):
                 continue
             elif k == 'qty':
                 total_qty = v.qty + item.qty
-                if total_qty
+                if total_qty:
                     v.qty = total_qty
                     continue
                 self.remove_item(k)
@@ -32,3 +32,13 @@ def get_num_items(self):
 
 def remove_item(self, key):
     self.cont.pop(key)
+if __name__ == '__main__':
+    item1 = Item(1, "Currency", 2., 2)
+    item2 = Item(2, "Currency", 3., 4)
+    item3 = Item(3, "Currency", 4., 3)
+    cart = Cart()
+    cart.update(item1)
+    cart.update(item2)
+    cart.update(item3)
+    print "There are %i items in cart woth a total of € %" % (cart.get_num_items(), cart.get_total())
+    
