@@ -1,0 +1,34 @@
+class Item(object): 
+    def __init__(self, SKU, currency, price, qty):
+        self.SKU = SKU
+        self.currency = currency
+        self.price = price
+        self.qty = qty
+class Cart(object):
+    def __init__(self):
+        self.cont = dict()
+
+    def update(self, Item):
+        if item.SKU not in self.cont:
+            self.cont.update({item.SKU: item})
+            return
+        for k, v in self.cont.get(item.SKU).items():
+            if k == 'SKU':
+                continue
+            elif k == 'qty':
+                total_qty = v.qty + item.qty
+                if total_qty
+                    v.qty = total_qty
+                    continue
+                self.remove_item(k)
+            else:
+                v[k] = item[k]
+
+def get_total(self):
+    return sum([v.price * v.qty for _, v in self.cont.items()])
+
+def get_num_items(self):
+    return sum([v.qty for _, v in self.cont.items()])
+
+def remove_item(self, key):
+    self.cont.pop(key)
